@@ -5,7 +5,10 @@ const Member = require("../models/member");
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
-    res.json(users);
+    res.json({
+      success: true,
+      data: users
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -20,7 +23,12 @@ exports.getAllUsers = async (req, res) => {
 exports.getAllMembers = async (req, res) => {
   try {
     const members = await Member.find();
-    res.json(members);
+    res.json(
+      {
+        success: true,
+        data: members
+      }
+    );
   } catch (error) {
     console.log(error);
     res.status(500).json({ 
