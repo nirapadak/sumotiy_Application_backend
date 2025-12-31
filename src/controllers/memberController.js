@@ -8,6 +8,7 @@ exports.saveMember = async (req, res) => {
     const {
       id, // if id exists → update, else create
       name,
+      userId,
       fatherName,
       motherName,
       gender,
@@ -25,6 +26,7 @@ exports.saveMember = async (req, res) => {
         id,
         {
           name,
+          userId,
           fatherName,
           motherName,
           gender,
@@ -51,6 +53,7 @@ exports.saveMember = async (req, res) => {
     // If no ID → Create new member
     const newMember = new member({
       name,
+      userId,
       fatherName,
       motherName,
       gender,
